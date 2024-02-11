@@ -82,33 +82,34 @@ class ProductController extends BaseController
                         $innerReader->close();
                     }
                 }
-                                
+            
+                // Insert any remaining data
+                if (!empty($batchData)) {
+                    try {
+                        DB::table('products')->insert($batchData);
+                    } catch (\Exception $e) {
+                        echo "<h1>Error</h1>There was an error whilst connecting to the database.<br/><br/><a href='/'>Return Home</a>";
+                    }
+                }
+
+                // Send out of stock email
+                if ($totalOutOfStock > 0 && $request->lowStockEmail != ""){;
+                    // Send out of stock email.  Viewable using Mailpit http://localhost:8025
+                    Mail::to($request->lowStockEmail)->send(new OutOfStockProducts($outOfStockData));
+                }
+
+                // Close XML reader
+                $reader->close();
+
+                // Delete product file
+                File::delete($uploadPath . '/'. $fileName);
+
+                return view('inventory', ["products" => $allProductsData]);
+                                    
             } catch (\Exception $e) {
                 echo "<h1>Error</h1>Incorrect XML Data detected whilst processing \"" . $file->getClientOriginalName() . "\"<br/><br/><a href='/'>Return Home</a>";
+                $allProductsData = [];
             }
-            
-            // Insert any remaining data
-            if (!empty($batchData)) {
-                try {
-                    DB::table('products')->insert($batchData);
-                } catch (\Exception $e) {
-                    echo "<h1>Error</h1>There was an error whilst connecting to the database.<br/><br/><a href='/'>Return Home</a>";
-                }
-            }
-
-            // Send out of stock email
-            if ($totalOutOfStock > 0 && $request->lowStockEmail != ""){;
-                // Send out of stock email.  Viewable using Mailpit http://localhost:8025
-                Mail::to($request->lowStockEmail)->send(new OutOfStockProducts($outOfStockData));
-            }
-
-            // Close XML reader
-            $reader->close();
-
-            // Delete product file
-            File::delete($uploadPath . '/'. $fileName);
-
-            return view('inventory', ["products" => $allProductsData]);
 
        } else {
             // Error moving file
