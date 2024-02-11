@@ -1,0 +1,47 @@
+<DocumentElement>
+  <ExportData>
+    <code>7954</code>
+    <cat>Single Use Instruments</cat>
+    <name>Dressing Scissors - Blunt/Blunt</name>
+    <price_ex_vat>8.1000</price_ex_vat>
+    <price_inc_vat>9.7200</price_inc_vat>
+    <stock>1</stock>
+    <short_desc>- Sterile individually packed</short_desc>
+  </ExportData>
+  <ExportData>
+    <code>9876</code>
+    <cat>Single Use Instruments</cat>
+    <name>Iris Stitch Scissors - Straight</name>
+    <price_ex_vat>8.3300</price_ex_vat>
+    <price_inc_vat>10.0000</price_inc_vat>
+    <stock>0</stock>
+    <short_desc>- Sterile individually packed</short_desc>
+  </ExportData>
+  <ExportData>
+    <code>LTX123</code>
+    <cat>Gloves</cat>
+    <name>GAMMEX Non-Latex PI Textured Surgical Gloves</name>
+    <price_ex_vat>113.5000/price_ex_vat>
+    <price_inc_vat>136.2000</price_inc_vat>
+    <stock>34</stock>
+    <short_desc>- Pack of 50</short_desc>
+  </ExportData>
+  <ExportData>
+    <code>TP786</code>
+    <cat>Paper Goods</cat>
+    <name>100% Recycled Toilet Rolls - 320 Sheet - 2-Ply - (Pack 36)</name>
+    <price_ex_vat>16.9600</price_ex_vat>
+    <price_inc_vat>20.3520</price_inc_vat>
+    <stock>0</stock>
+    <short_desc>- Pack of 50</short_desc>
+  </ExportData>
+  <ExportData>
+    <code>TP787</code>
+    <cat>Paper Goods</cat>
+    <name>100% Recycled Toilet Rolls - 320 Sheet - 2-Ply - (Pack 48)</name>
+    <price_ex_vat>36.2600</price_ex_vat>
+    <price_inc_vat>43.5120</price_inc_vat>
+    <stock>56</stock>
+    <short_desc>- Pack of 50</short_desc>
+  </ExportData>
+</DocumentElement>
